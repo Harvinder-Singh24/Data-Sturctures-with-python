@@ -41,7 +41,6 @@ class LinkedList:
         if self.head is None:
             self.head = new_node
             return
-
         temp = self.head
         while (temp.next):
             temp = temp.next
@@ -56,6 +55,29 @@ class LinkedList:
             temp = temp.next
         print("The lenght of linked list is ",count)
 
+    ################Delet node in linked list##########
+
+    def delete(self, key):
+        # Store head node
+        temp = self.head
+
+        # If head node itself holds the key to be deleted
+        if (temp is not None):
+            if (temp.data == key):
+                self.head = temp.next
+                temp = None
+                return
+
+        # Search for the key to be deleted, keep track of the
+        # previous node as we need to change 'prev.next'
+        while (temp is not None):
+            if temp.data == key:
+                break
+            prev = temp
+            temp = temp.next
+        # Unlink the node from linked list
+        prev.next = temp.next
+        temp = None
     # to print linked list
     def display(self):
         temp = self.head
@@ -73,7 +95,6 @@ if __name__ == '__main__':
     list.head.next = second
     second.next  = third
 
-    list.add_middle(10 , 1)
-
+    list.delete(2)
     list.display()
 
