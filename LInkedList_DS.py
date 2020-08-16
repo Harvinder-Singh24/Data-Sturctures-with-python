@@ -62,6 +62,20 @@ class LinkedList:
     ## 3- deleting last node
     ## 4- deleting element search
 
+
+    ##this one is 1
+    def first_delete(self):
+        global temp
+        temp = self.head
+        if temp is None:
+            print("Linked list is empty")
+
+        self.head = temp.next
+        print("The element which is deleted is ", temp.data)
+        temp = None
+
+        return
+
     ##this one is 4
     def delete(self, key):
         # Store head node
@@ -87,6 +101,7 @@ class LinkedList:
     # to print linked list
     def display(self):
         temp = self.head
+        print("Present element in linked list")
         while temp:
             print(temp.data)
             temp = temp.next
@@ -94,13 +109,17 @@ class LinkedList:
 if __name__ == '__main__':
 
     list = LinkedList()
-    list.head = Node(1)
-    second = Node(2)
-    third = Node(3)
+
+    list.head = Node(0)
+    second = Node(1)
+    third = Node(2)
+    fourth = Node(3)
 
     list.head.next = second
     second.next  = third
+    third.next = fourth
 
-    list.delete(2)
+    list.first_delete()
+
     list.display()
 
