@@ -56,7 +56,13 @@ class LinkedList:
         print("The lenght of linked list is ",count)
 
     ################Delet node in linked list##########
+    ## 4 cases deletion
+    ## 1- deleting head node
+    ## 2- deleting middle node
+    ## 3- deleting last node
+    ## 4- deleting element search
 
+    ##this one is 4
     def delete(self, key):
         # Store head node
         temp = self.head
