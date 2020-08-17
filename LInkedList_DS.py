@@ -98,6 +98,23 @@ class LinkedList:
         # Unlink the node from linked list
         prev.next = temp.next
         temp = None
+
+
+    ####################SEARCHING IN LINKED LIST#################
+    def search_linked_list(self , element):
+        temp = self.head
+        position = 0
+        while temp:
+            if element == temp.data:
+                position += element
+                print("Element found at index" , position)
+                break
+            temp = temp.next
+        else:
+            print("Element not found")
+
+
+
     # to print linked list
     def display(self):
         temp = self.head
@@ -119,7 +136,6 @@ if __name__ == '__main__':
     second.next  = third
     third.next = fourth
 
-    list.first_delete()
+    list.search_linked_list(0)
 
-    list.display()
 
