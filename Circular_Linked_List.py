@@ -9,6 +9,12 @@ class Node:
 class Circular_Linked_list:
     def __init__(self):
         self.head = None
+    # function to push element at the begnning
+    def push_at_first(self , element):
+        new_node = Node(element)
+        new_node.next = self.head
+        print("Element added in the list is :" , element)
+        self.head = new_node
 
 
     # function to display it
@@ -27,12 +33,17 @@ class Circular_Linked_list:
 
 c  = Circular_Linked_list()
 
-c.head = Node(0)
-second = Node(1)
+c.head = Node(1)
+second = Node(2)
 third = Node(3)
+fourth = Node(4)
+fifth = Node(5)
 
 c.head.next = second
 second.next = third
+third.next = fourth
+fourth.next = fifth
 
+c.push_at_first(5)
 c.display()
 
