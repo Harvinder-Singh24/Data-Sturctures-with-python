@@ -15,7 +15,31 @@ class Circular_Linked_list:
         new_node.next = self.head
         print("Element added in the list is :" , element)
         self.head = new_node
+    # to search an element present in linked list
+    def search(self , element):
 
+        temp = self.head
+        position = 0
+        while temp:
+            position += 1
+            if element == temp.data:
+                print("Element found at index", position-1)
+                break
+            temp = temp.next
+        else:
+            print("Element not found")
+
+
+    # to find the lenght of the linked list
+    def lenght(self):
+        count = 0
+        temp = self.head
+        while temp:
+            count += 1
+            temp = temp.next
+            if temp == self.head:
+                break
+        print("The lenght of the linked list is :",count)
 
     # function to display it
     def display(self):
@@ -37,13 +61,12 @@ c.head = Node(1)
 second = Node(2)
 third = Node(3)
 fourth = Node(4)
-fifth = Node(5)
+
 
 c.head.next = second
 second.next = third
 third.next = fourth
-fourth.next = fifth
 
-c.push_at_first(5)
-c.display()
+
+c.search(3)
 
