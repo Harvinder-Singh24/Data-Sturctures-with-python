@@ -18,6 +18,17 @@ def enqueue(queue , element):
     if is_empty(queue):
         print( "The queue is empty")
 
+# function to delete element in the queue
+
+def del_queue(queue):
+
+    print("Element deleted from the queue :",queue.pop())
+
+    if is_empty(queue):
+        print("Queue is empty")
+
+
+
 
 # function to display the queue
 
@@ -32,5 +43,11 @@ Queue = []
 
 enqueue(Queue , 0)
 enqueue(Queue , 1)
+enqueue(Queue , 3)
+enqueue(Queue , 4)
+enqueue(Queue , 5)
+
+
+del_queue(Queue)
 
 display(Queue)
