@@ -28,6 +28,26 @@ class Circular_Linked_list:
             temp = temp.next
         else:
             print("Element not found")
+    # to delete first element from the linked list
+
+    def delete_first(self):
+
+        current = self.head
+        self.head = current.next
+        current.next = None
+        print("Element deleted from the linked list is " , current.data)
+
+    # to delete the last node in circular linked list
+
+    def delete_search(self , element):
+
+        if element == self.head:
+            current = self.head
+            self.head = current.next
+            current.next = None
+        else:
+            pass
+
 
 
     # to find the lenght of the linked list
@@ -39,7 +59,8 @@ class Circular_Linked_list:
             temp = temp.next
             if temp == self.head:
                 break
-        print("The lenght of the linked list is :",count)
+            print(count)
+
 
     # function to display it
     def display(self):
@@ -68,5 +89,5 @@ second.next = third
 third.next = fourth
 
 
-c.search(3)
-
+c.delete_search(1)
+c.display()
