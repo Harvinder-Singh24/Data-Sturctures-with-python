@@ -67,4 +67,5 @@ if __name__ == '__main__':
     # search element in set
     search_element(s, 5)
 
+    #stack is empty or not
     is_empty(s)
