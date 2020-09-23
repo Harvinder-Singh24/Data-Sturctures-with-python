@@ -3,19 +3,26 @@
 # circular linked list - the last of the node will connect to the first node
 
 class Node:
+
     def __init__(self , data):
         self.data = data
         self.next = None
+
 class Circular_Linked_list:
+
     def __init__(self):
         self.head = None
+
     # function to push element at the begnning
+
     def push_at_first(self , element):
         new_node = Node(element)
         new_node.next = self.head
         print("Element added in the list is :" , element)
         self.head = new_node
+
     # to search an element present in linked list
+
     def search(self , element):
 
         temp = self.head
@@ -28,6 +35,7 @@ class Circular_Linked_list:
             temp = temp.next
         else:
             print("Element not found")
+
     # to delete first element from the linked list
 
     def delete_first(self):

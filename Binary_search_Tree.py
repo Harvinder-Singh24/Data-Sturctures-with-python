@@ -10,28 +10,28 @@
 #   4  5  6  7
 
 # Traverse the tree in two ways
-#DFS - dept first search = contain = preorder , inorder , postorder
-#BFS - birth first search = contain = level-order traversal
+# DFS - dept first search = contain = preorder , inorder , postorder
+# BFS - birth first search = contain = level-order traversal
 
-#preorder = root , left , right
-#postorder = left , right , root
-#inorder = left , root , right
+# preorder = root , left , right
+# postorder = left , right , root
+# inorder = left , root , right
 
 
 class Node:
 
-    def __init__(self , data = None):
+    def __init__(self, data=None):
         self.data = data
         self.left_child = None
         self.right_child = None
 
+
 class Tree:
 
     def __init__(self):
-            self.root = None
+        self.root = None
 
-
-    #function to add element in the tree
+    # function to add element in the tree
     def add_node(self, element):
         if self.root == None:
             self.root = Node(element)
@@ -49,10 +49,10 @@ class Tree:
         else:
             self._preorder(self.root)
 
-    def _preorder(self , current):
+    def _preorder(self, current):
 
-        if current :
-            print(current.data , end=" ")
+        if current:
+            print(current.data, end=" ")
             self._preorder(current.left_child)
             self._preorder(current.right_child)
 
@@ -65,12 +65,12 @@ class Tree:
         else:
             self._postorder(self.root)
 
-    def _postorder(self , current):
+    def _postorder(self, current):
 
         if current:
             self._postorder(current.left_child)
             self._postorder(current.right_child)
-            print(current.data , end=" ")
+            print(current.data, end=" ")
 
     #############  INORDER TRAVERSAL left  , root , right
 
@@ -81,13 +81,12 @@ class Tree:
         else:
             self._inorder(self.root)
 
-    def _inorder(self , current):
+    def _inorder(self, current):
 
         if current:
             self._postorder(current.left_child)
-            print(current.data , end=" ")
+            print(current.data, end=" ")
             self._postorder(current.right_child)
-
 
     # function to display the tree or Level_ordertransversal of birth first search
 
@@ -101,26 +100,24 @@ class Tree:
 
     def _level_order_transversal(self, current):
 
-
         # making queue to add element of trees in it
         queue = []
         # adding the root node to the queue
         queue.append(current)
-        #looping till the lenght of queue is above zero
+        # looping till the lenght of queue is above zero
         while len(queue) > 0:
-            #then pop the first element in the queue and store it in node1
+            # then pop the first element in the queue and store it in node1
             node1 = queue.pop(0)
-            #print the data in node1
-            print(node1.data , end  = " ")
+            # print the data in node1
+            print(node1.data, end=" ")
             # checking the left and right child of the node1 element if present  append it to the queue
-            if (node1.left_child is not None) :
+            if (node1.left_child is not None):
                 queue.append(node1.left_child)
 
             if (node1.right_child is not None):
                 queue.append(node1.right_child)
 
-
-    def _add_node(self , current , val):
+    def _add_node(self, current, val):
 
         if (current.data > val):
 
@@ -139,13 +136,12 @@ class Tree:
         else:
             print('Value is Already Added in The tree..')
 
-
     # function to count the no. of Nodes in the tree
 
     def count(self):
         # making queue to add element of trees in it
         queue = []
-        #make variable count
+        # make variable count
         count = 0
         # adding the root node to the queue
         queue.append(self.root)
@@ -161,24 +157,25 @@ class Tree:
 
             if (node1.right_child is not None):
                 queue.append(node1.right_child)
-        print("No. of nodes in the tree is : ",count)
+        print("No. of nodes in the tree is : ", count)
 
-    #function to count minimum no.  in the tree
+    # function to count minimum no.  in the tree
 
     def minimum_no_tree(self):
 
         current = self.root
         while (current.left_child is not None):
             current = current.left_child
-        print("The minimum element in the tree is :",current.data)
+        print("The minimum element in the tree is :", current.data)
 
-    #function to find maximum no. of Nodes in the tree
+    # function to find maximum no. of Nodes in the tree
     def maximum_no_tree(self):
 
         current = self.root
         while (current.right_child is not None):
             current = current.right_child
-        print("The maximum element in the tree is :",current.data)
+        print("The maximum element in the tree is :", current.data)
+
 
 
 if __name__ == '__main__':
@@ -199,3 +196,5 @@ if __name__ == '__main__':
     print()
     print("Inorder Traversal")
     tree.Inorder_Traversal()
+    print()
+    print("Searching....")
